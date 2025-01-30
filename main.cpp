@@ -40,10 +40,9 @@ int main(int argc, char *argv[])
         {
             std::cout << "The child process will execute the command: ls -l after 6 seconds" << std::endl;
             sleep(6);
-            char* args[] = {"ls", "-l", NULL} ; 
-            execvp("ls",args); 
+            char *const args[] = {(char*) "ls", (char*) "-l", NULL}; 
+            execvp((char*)("ls"), args); 
             perror("exec failed");
-            exit(1) ; 
             /* TODO: SLEEP FOR 6 SECONDS*/
             /* TODO: EXECUTE THE COMMAND ls -l USING EXECVP*/
         }
@@ -51,10 +50,9 @@ int main(int argc, char *argv[])
         {
             std::cout << "The child process is exiting" << std::endl;
             kill(getpid(), SIGINT);
-            exit(1);
         }
     }
-    else 
+    else if (pid >= 1 )
     {
         int status;
 
