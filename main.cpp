@@ -52,7 +52,7 @@ int main(int argc, char *argv[])
             kill(getpid(), SIGINT);
         }
     }
-    else if (/*TODO: CONDITION IF PARENT PROCESS*/)
+    else 
     {
         int status;
 
