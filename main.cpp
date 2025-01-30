@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
         {
             std::cout << "The child process will execute the command: ls -l after 6 seconds" << std::endl;
             sleep(6);
-            char* args[] = {"ls", "-1", NULL} ; 
+            char* args[] = {"ls", "-l", NULL} ; 
             execvp("ls",args); 
             perror("exec failed");
             exit(1) ; 
@@ -57,7 +57,7 @@ int main(int argc, char *argv[])
         int status;
 
         /* TODO: WAIT FOR CHILD PROCESS TO FINISH */
-        waitpid(pid, &status. 0);
+        waitpid(pid, &status, 0);
         
 
         cout << "\nHello from the parent process!" << endl;
