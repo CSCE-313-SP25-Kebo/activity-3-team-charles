@@ -51,6 +51,7 @@ int main(int argc, char *argv[])
         {
             std::cout << "The child process is exiting" << std::endl;
             kill(getpid(), SIGINT);
+            exit(1);
         }
     }
     else 
